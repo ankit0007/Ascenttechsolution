@@ -11,6 +11,7 @@
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
 					<ul class="nav pull-right">
+						<li><a href="downloadcsv.php"><img src="/csv.png" width="50"></a></li>
 						<li><a href="#">
 							Admin
 						</a></li>
