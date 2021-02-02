@@ -69,7 +69,7 @@ while($row=mysqli_fetch_array($query))
 											<td><b>Complainant Name</b></td>
 											<td> <?php echo htmlentities($row['name']);?></td>
 											<td><b>Reg Date</b></td>
-											<td><?php echo htmlentities($row['regDate']);?>
+											<td><?php echo getcurrenttimme($row['regDateshow']);?>
 											</td>
 										</tr>
 

@@ -15,7 +15,8 @@ while ($row = mysqli_fetch_array($query)) {
     $list[$i]['category'] = getCategory($row['category'], $con)['categoryName'];
     $list[$i]['categoryDetails'] = getCategory($row['category'], $con)['categoryDescription'];
     $list[$i]['subcategory'] = $row['subcategory'];
-    $list[$i]['regDateshow'] = date('F d, Y h:i A', $row['regDateshow']); 
+    $list[$i]['regDateshow'] = getcurrenttimme($row['regDateshow']); 
+    $list[$i]['File']='https://ascenttechsolution.com/cms/users/complaintdocs/'.$row['complaintFile'];
 }
 //print_r($list);
 

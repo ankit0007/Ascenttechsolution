@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Asia/Kolkata'); 
 define('DB_SERVER', 'localhost');
 define('DB_USER', 'ascenttechsoluti_root');
 define('DB_PASS', 'r3qx?Y36yONU');
@@ -12,8 +12,7 @@ if (mysqli_connect_errno()) {
 
 function getcurrenttimme($time)
 {
-    date_default_timezone_set('America/New_York');
-    $time = strtotime($time);
+    
     date_default_timezone_set('Asia/Kolkata');
     return date('F d, Y h:i a', $time);
 }

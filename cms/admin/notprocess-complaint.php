@@ -77,7 +77,7 @@ while($row=mysqli_fetch_array($query))
 										<tr>
 											<td><?php echo htmlentities($row['complaintNumber']);?></td>
 											<td><?php echo htmlentities($row['name']);?></td>
-											<td><?php echo htmlentities($row['regDate']);?></td>
+											<td><?php echo getcurrenttimme($row['regDateshow']);?></td>
 										
 											<td><button type="button" class="btn btn-danger">Not process yet</button></td>
 											
