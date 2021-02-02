@@ -71,6 +71,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 <tbody>
 <?php 
 $st='closed';
+//echo "select tblcomplaints.*,users.fullName as name from tblcomplaints join users on users.id=tblcomplaints.userId where tblcomplaints.status='$st'";
 $query=mysqli_query($con,"select tblcomplaints.*,users.fullName as name from tblcomplaints join users on users.id=tblcomplaints.userId where tblcomplaints.status='$st'");
 while($row=mysqli_fetch_array($query))
 {
@@ -78,7 +79,7 @@ while($row=mysqli_fetch_array($query))
 										<tr>
 											<td><?php echo htmlentities($row['complaintNumber']);?></td>
 											<td><?php echo htmlentities($row['name']);?></td>
-											<td><?php echo htmlentities($row['regDate']);?></td>
+											<td><?php echo getcurrenttimme($row['regDate']);?></td>
 										
 											<td><button type="button" class="btn btn-success">Closed</button></td>
 											
