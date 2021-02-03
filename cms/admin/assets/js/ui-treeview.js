@@ -13,19 +13,19 @@ var UITreeview = function () {
                 alert("You activated " + node.data.title);
             },
             children: [{
-                title: "Item 1"
-            }, {
-                title: "Folder 2",
-                isFolder: true,
-                key: "folder2",
-                children: [{
-                    title: "Sub-item 2.1"
+                    title: "Item 1"
                 }, {
-                    title: "Sub-item 2.2"
+                    title: "Folder 2",
+                    isFolder: true,
+                    key: "folder2",
+                    children: [{
+                            title: "Sub-item 2.1"
+                        }, {
+                            title: "Sub-item 2.2"
+                        }]
+                }, {
+                    title: "Item 3"
                 }]
-            }, {
-                title: "Item 3"
-            }]
         });
         //External data 
         $("#tree3").dynatree({
@@ -46,64 +46,64 @@ var UITreeview = function () {
             }
         });
         var treeData = [{
-            title: "item1 with key and tooltip",
-            tooltip: "Look, a tool tip!"
-        }, {
-            title: "item2: selected on init",
-        }, {
-            title: "Folder",
-            isFolder: true,
-            key: "id3",
-            children: [{
-                title: "Sub-item 3.1",
-                children: [{
-                    title: "Sub-item 3.1.1",
-                    key: "id3.1.1"
-                }, {
-                    title: "Sub-item 3.1.2",
-                    key: "id3.1.2"
-                }]
+                title: "item1 with key and tooltip",
+                tooltip: "Look, a tool tip!"
             }, {
-                title: "Sub-item 3.2",
-                children: [{
-                    title: "Sub-item 3.2.1",
-                    key: "id3.2.1"
-                }, {
-                    title: "Sub-item 3.2.2",
-                    key: "id3.2.2"
-                }]
-            }]
-        }, {
-            title: "Document with some children (expanded on init)",
-            key: "id4",
-            children: [{
-                title: "Sub-item 4.1 (active on init)",
-                activate: true,
-                children: [{
-                    title: "Sub-item 4.1.1",
-                    key: "id4.1.1"
-                }, {
-                    title: "Sub-item 4.1.2",
-                    key: "id4.1.2"
-                }]
+                title: "item2: selected on init",
             }, {
-                title: "Sub-item 4.2 (selected on init)",
-                select: true,
+                title: "Folder",
+                isFolder: true,
+                key: "id3",
                 children: [{
-                    title: "Sub-item 4.2.1",
-                    key: "id4.2.1"
-                }, {
-                    title: "Sub-item 4.2.2",
-                    key: "id4.2.2"
-                }]
+                        title: "Sub-item 3.1",
+                        children: [{
+                                title: "Sub-item 3.1.1",
+                                key: "id3.1.1"
+                            }, {
+                                title: "Sub-item 3.1.2",
+                                key: "id3.1.2"
+                            }]
+                    }, {
+                        title: "Sub-item 3.2",
+                        children: [{
+                                title: "Sub-item 3.2.1",
+                                key: "id3.2.1"
+                            }, {
+                                title: "Sub-item 3.2.2",
+                                key: "id3.2.2"
+                            }]
+                    }]
             }, {
-                title: "Sub-item 4.3 (hideCheckbox)",
-                hideCheckbox: true
-            }, {
-                title: "Sub-item 4.4 (unselectable)",
-                unselectable: true
-            }]
-        }];
+                title: "Document with some children (expanded on init)",
+                key: "id4",
+                children: [{
+                        title: "Sub-item 4.1 (active on init)",
+                        activate: true,
+                        children: [{
+                                title: "Sub-item 4.1.1",
+                                key: "id4.1.1"
+                            }, {
+                                title: "Sub-item 4.1.2",
+                                key: "id4.1.2"
+                            }]
+                    }, {
+                        title: "Sub-item 4.2 (selected on init)",
+                        select: true,
+                        children: [{
+                                title: "Sub-item 4.2.1",
+                                key: "id4.2.1"
+                            }, {
+                                title: "Sub-item 4.2.2",
+                                key: "id4.2.2"
+                            }]
+                    }, {
+                        title: "Sub-item 4.3 (hideCheckbox)",
+                        hideCheckbox: true
+                    }, {
+                        title: "Sub-item 4.4 (unselectable)",
+                        unselectable: true
+                    }]
+            }];
         //Checkbox
         $("#tree4").dynatree({
             checkbox: true,

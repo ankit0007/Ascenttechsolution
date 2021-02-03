@@ -18,7 +18,7 @@ var Calendar = function () {
             });
         });
         /* initialize the calendar
-				 -----------------------------------------------------------------*/
+         -----------------------------------------------------------------*/
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -35,20 +35,20 @@ var Calendar = function () {
                 right: 'month,agendaWeek,agendaDay'
             },
             events: [{
-                title: 'Meeting with Boss',
-                start: new Date(y, m, 1),
-                className: 'label-default'
-            }, {
-                title: 'Bootstrap Seminar',
-                start: new Date(y, m, d - 5),
-                end: new Date(y, m, d - 2),
-                className: 'label-teal'
-            }, {
-                title: 'Lunch with Nicole',
-                start: new Date(y, m, d - 3, 12, 0),
-                className: 'label-green',
-                allDay: false
-            }],
+                    title: 'Meeting with Boss',
+                    start: new Date(y, m, 1),
+                    className: 'label-default'
+                }, {
+                    title: 'Bootstrap Seminar',
+                    start: new Date(y, m, d - 5),
+                    end: new Date(y, m, d - 2),
+                    className: 'label-teal'
+                }, {
+                    title: 'Lunch with Nicole',
+                    start: new Date(y, m, d - 3, 12, 0),
+                    className: 'label-green',
+                    allDay: false
+                }],
             editable: true,
             droppable: true, // this allows things to be dropped onto the calendar !!!
             drop: function (date, allDay) { // this function is called when something is dropped
@@ -88,13 +88,13 @@ var Calendar = function () {
                     $categoryClass = form.find("select[name='category'] option:checked").val();
                     if (title !== null) {
                         calendar.fullCalendar('renderEvent', {
-                                title: title,
-                                start: start,
-                                end: end,
-                                allDay: allDay,
-                                className: $categoryClass
-                            }, true // make the event "stick"
-                        );
+                            title: title,
+                            start: start,
+                            end: end,
+                            allDay: allDay,
+                            className: $categoryClass
+                        }, true // make the event "stick"
+                                );
                     }
                     $modal.modal('hide');
                     return false;

@@ -76,19 +76,30 @@
 
                             <!-- Place this tag after the last +1 button tag. -->
                             <script type="text/javascript">
-                              (function() {
-                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                                po.src = 'https://apis.google.com/js/plusone.js';
-                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                              })();
+                                (function () {
+                                    var po = document.createElement('script');
+                                    po.type = 'text/javascript';
+                                    po.async = true;
+                                    po.src = 'https://apis.google.com/js/plusone.js';
+                                    var s = document.getElementsByTagName('script')[0];
+                                    s.parentNode.insertBefore(po, s);
+                                })();
                             </script>
-                            
+
                             <a href="https://twitter.com/share" class="twitter-share-button" data-via="mjaalnir" data-related="mjaalnir" data-hashtags="bootstrap">Tweet</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                            <script>!function (d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                    if (!d.getElementById(id)) {
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = p + '://platform.twitter.com/widgets.js';
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }
+                                }(document, 'script', 'twitter-wjs');</script>
                         </div>
                         <div id="changelog">
                             <div class="well">
-                            <h3>ChangeLog <small>from the <b>master</b> branch</small></h3>
+                                <h3>ChangeLog <small>from the <b>master</b> branch</small></h3>
                                 <ul></ul>
                             </div>
                         </div>
@@ -227,35 +238,35 @@ $(&#039;.my-colorpicker-control&#039;).colorpicker().on(&#039;changeColor&#039;,
         <script src="./js/bootstrap-colorpicker.js"></script>
         <script src="./js/commits.js"></script>
         <script>
-            $(function() {
-                // pretify code samples
-                window.prettyPrint && prettyPrint();
+                                $(function () {
+                                    // pretify code samples
+                                    window.prettyPrint && prettyPrint();
 
-                // Code for those demos
-                var _createColorpickers = function() {
-                    $('#cp1').colorpicker({
-                        format: 'hex'
-                    });
-                    $('#cp2').colorpicker();
-                    $('#cp3').colorpicker();
-                    var bodyStyle = $('body')[0].style;
-                    $('#cp4').colorpicker().on('changeColor', function(ev) {
-                        bodyStyle.backgroundColor = ev.color.toHex();
-                    });
-                }
+                                    // Code for those demos
+                                    var _createColorpickers = function () {
+                                        $('#cp1').colorpicker({
+                                            format: 'hex'
+                                        });
+                                        $('#cp2').colorpicker();
+                                        $('#cp3').colorpicker();
+                                        var bodyStyle = $('body')[0].style;
+                                        $('#cp4').colorpicker().on('changeColor', function (ev) {
+                                            bodyStyle.backgroundColor = ev.color.toHex();
+                                        });
+                                    }
 
-                _createColorpickers();
+                                    _createColorpickers();
 
-                $('.bscp-destroy').click(function(e) {
-                    e.preventDefault();
-                    $('.bscp').colorpicker('destroy');
-                });
+                                    $('.bscp-destroy').click(function (e) {
+                                        e.preventDefault();
+                                        $('.bscp').colorpicker('destroy');
+                                    });
 
-                $('.bscp-create').click(function(e) {
-                    e.preventDefault();
-                    _createColorpickers();
-                });
-            });
+                                    $('.bscp-create').click(function (e) {
+                                        e.preventDefault();
+                                        _createColorpickers();
+                                    });
+                                });
         </script>
     </body>
 </html>

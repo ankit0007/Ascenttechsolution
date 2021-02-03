@@ -66,9 +66,9 @@ var FormElements = function () {
     //function to initiate bootstrap-colorpalette
     var runColorPalette = function () {
         $('.color-palette').colorPalette()
-            .on('selectColor', function (e) {
-                $('#selected-color1').val(e.color);
-            });
+                .on('selectColor', function (e) {
+                    $('#selected-color1').val(e.color);
+                });
     };
     //function to initiate jquery.tagsinput
     var runTagsInput = function () {

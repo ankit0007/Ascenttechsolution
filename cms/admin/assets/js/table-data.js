@@ -6,8 +6,8 @@ var TableData = function () {
     var runDataTable = function () {
         var oTable = $('#sample_1').dataTable({
             "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+                    "aTargets": [0]
+                }],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",

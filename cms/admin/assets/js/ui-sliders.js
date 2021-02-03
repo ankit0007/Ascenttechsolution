@@ -43,15 +43,15 @@ var UISliders = function () {
                 // "tron" case
                 if (this.$.data('skin') == 'tron') {
                     var a = this.angle(this.cv) // Angle
-                        ,
-                        sa = this.startAngle // Previous start angle
-                        ,
-                        sat = this.startAngle // Start angle
-                        ,
-                        ea // Previous end angle
-                        , eat = sat + a // End angle
-                        ,
-                        r = true;
+                            ,
+                            sa = this.startAngle // Previous start angle
+                            ,
+                            sat = this.startAngle // Start angle
+                            ,
+                            ea // Previous end angle
+                            , eat = sat + a // End angle
+                            ,
+                            r = true;
                     this.g.lineWidth = this.lineWidth;
                     this.o.cursor && (sat = eat - 0.3) && (eat = eat + 0.3);
                     if (this.o.displayPrevious) {
@@ -77,19 +77,19 @@ var UISliders = function () {
         });
         // Example of infinite knob, iPod click wheel
         var v, up = 0,
-            down = 0,
-            i = 0,
-            $idir = $("div.idir"),
-            $ival = $("div.ival"),
-            incr = function () {
-                i++;
-                $idir.show().html("+").fadeOut();
-                $ival.html(i);
-            }, decr = function () {
-                i--;
-                $idir.show().html("-").fadeOut();
-                $ival.html(i);
-            };
+                down = 0,
+                i = 0,
+                $idir = $("div.idir"),
+                $ival = $("div.ival"),
+                incr = function () {
+                    i++;
+                    $idir.show().html("+").fadeOut();
+                    $ival.html(i);
+                }, decr = function () {
+            i--;
+            $idir.show().html("-").fadeOut();
+            $ival.html(i);
+        };
         $("input.infinite").knob({
             min: 0,
             max: 20,

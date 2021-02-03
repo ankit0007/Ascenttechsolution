@@ -18,15 +18,15 @@ var Charts = function () {
             d3.push([i, Math.tan(i)]);
         }
         $.plot("#placeholder", [{
-            label: "sin(x)",
-            data: d1
-        }, {
-            label: "cos(x)",
-            data: d2
-        }, {
-            label: "tan(x)",
-            data: d3
-        }], {
+                label: "sin(x)",
+                data: d1
+            }, {
+                label: "cos(x)",
+                data: d2
+            }, {
+                label: "tan(x)",
+                data: d3
+            }], {
             series: {
                 lines: {
                     show: true
@@ -340,12 +340,12 @@ var Charts = function () {
             [30, 31 + randValue()]
         ];
         var plot = $.plot($("#placeholder3"), [{
-            data: pageviews,
-            label: "Unique Visits"
-        }, {
-            data: visitors,
-            label: "Page Views"
-        }], {
+                data: pageviews,
+                label: "Unique Visits"
+            }, {
+                data: visitors,
+                label: "Page Views"
+            }], {
             series: {
                 lines: {
                     show: true,
@@ -353,10 +353,10 @@ var Charts = function () {
                     fill: true,
                     fillColor: {
                         colors: [{
-                            opacity: 0.05
-                        }, {
-                            opacity: 0.01
-                        }]
+                                opacity: 0.05
+                            }, {
+                                opacity: 0.01
+                            }]
                     }
                 },
                 points: {
@@ -404,7 +404,7 @@ var Charts = function () {
                     previousPoint = item.dataIndex;
                     $("#tooltip").remove();
                     var x = item.datapoint[0].toFixed(2),
-                        y = item.datapoint[1].toFixed(2);
+                            y = item.datapoint[1].toFixed(2);
                     showTooltip(item.pageX, item.pageY, item.series.label + " of " + x + " = " + y);
                 }
             } else {
@@ -416,7 +416,7 @@ var Charts = function () {
         // We use an inline data source in the example, usually data would
         // be fetched from a server
         var data = [],
-            totalPoints = 300;
+                totalPoints = 300;
 
         function getRandomData() {
             if (data.length > 0)
@@ -424,7 +424,7 @@ var Charts = function () {
             // Do a random walk
             while (data.length < totalPoints) {
                 var prev = data.length > 0 ? data[data.length - 1] : 50,
-                    y = prev + Math.random() * 10 - 5;
+                        y = prev + Math.random() * 10 - 5;
                 if (y < 0) {
                     y = 0;
                 } else if (y > 100) {
@@ -503,35 +503,35 @@ var Charts = function () {
             d_1.push([i, Math.sin(i)]);
         }
         var data_annotation = [{
-            data: d_1,
-            label: "Pressure",
-            color: "#333"
-        }];
+                data: d_1,
+                label: "Pressure",
+                color: "#333"
+            }];
         var markings = [{
-            color: "#f6f6f6",
-            yaxis: {
-                from: 1
-            }
-        }, {
-            color: "#f6f6f6",
-            yaxis: {
-                to: -1
-            }
-        }, {
-            color: "#000",
-            lineWidth: 1,
-            xaxis: {
-                from: 2,
-                to: 2
-            }
-        }, {
-            color: "#000",
-            lineWidth: 1,
-            xaxis: {
-                from: 8,
-                to: 8
-            }
-        }];
+                color: "#f6f6f6",
+                yaxis: {
+                    from: 1
+                }
+            }, {
+                color: "#f6f6f6",
+                yaxis: {
+                    to: -1
+                }
+            }, {
+                color: "#000",
+                lineWidth: 1,
+                xaxis: {
+                    from: 2,
+                    to: 2
+                }
+            }, {
+                color: "#000",
+                lineWidth: 1,
+                xaxis: {
+                    from: 8,
+                    to: 8
+                }
+            }];
         var placeholder = $("#placeholder6");
         var plot_annotation = $.plot(placeholder, data_annotation, {
             bars: {
@@ -575,7 +575,7 @@ var Charts = function () {
         ctx.fill();
         // Default Pie 
         var data_pie = [],
-            series = Math.floor(Math.random() * 6) + 3;
+                series = Math.floor(Math.random() * 6) + 3;
         for (var i = 0; i < series; i++) {
             data_pie[i] = {
                 label: "Series" + (i + 1),

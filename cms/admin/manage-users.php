@@ -40,12 +40,12 @@ if (strlen($_SESSION['alogin']) == 0) {
             </script>
         </head>
         <body>
-    <?php include('include/header.php'); ?>
+            <?php include('include/header.php'); ?>
 
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
-            <?php include('include/sidebar.php'); ?>				
+                        <?php include('include/sidebar.php'); ?>				
                         <div class="span9">
                             <div class="content">
 
@@ -72,11 +72,11 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             </thead>
                                             <tbody>
 
-    <?php
-    $query = mysqli_query($con, "select * from users ORDER BY id DESC ");
-    $cnt = 1;
-    while ($row = mysqli_fetch_array($query)) {
-        ?>									
+                                                <?php
+                                                $query = mysqli_query($con, "select * from users ORDER BY id DESC ");
+                                                $cnt = 1;
+                                                while ($row = mysqli_fetch_array($query)) {
+                                                    ?>									
                                                     <tr>
                                                         <td><?php echo htmlentities($cnt); ?></td>
                                                         <td><?php echo htmlentities($row['fullName']); ?></td>
@@ -93,8 +93,10 @@ if (strlen($_SESSION['alogin']) == 0) {
 
                                                         </td>
 
-        <?php $cnt = $cnt + 1;
-    } ?>
+                                                        <?php
+                                                        $cnt = $cnt + 1;
+                                                    }
+                                                    ?>
 
                                         </table>
                                     </div>
@@ -116,13 +118,13 @@ if (strlen($_SESSION['alogin']) == 0) {
             <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
             <script src="scripts/datatables/jquery.dataTables.js"></script>
             <script>
-        $(document).ready(function () {
-            $('.datatable-1').dataTable();
-            $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-            $('.dataTables_paginate > a').wrapInner('<span />');
-            $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-            $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-        });
+                                                            $(document).ready(function () {
+                                                                $('.datatable-1').dataTable();
+                                                                $('.dataTables_paginate').addClass("btn-group datatable-pagination");
+                                                                $('.dataTables_paginate > a').wrapInner('<span />');
+                                                                $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+                                                                $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+                                                            });
             </script>
         </body>
 <?php } ?>

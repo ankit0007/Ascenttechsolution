@@ -2,7 +2,7 @@ var UINestable = function () {
     //function to initiate jquery.nestable
     var updateOutput = function (e) {
         var list = e.length ? e : $(e.target),
-            output = list.data('output');
+                output = list.data('output');
         if (window.JSON) {
             output.val(window.JSON.stringify(list.nestable('serialize')));
             //, null, 2));
@@ -24,7 +24,7 @@ var UINestable = function () {
         updateOutput($('#nestable2').data('output', $('#nestable2-output')));
         $('#nestable-menu').on('click', function (e) {
             var target = $(e.target),
-                action = target.data('action');
+                    action = target.data('action');
             if (action === 'expand-all') {
                 $('.dd').nestable('expandAll');
             }

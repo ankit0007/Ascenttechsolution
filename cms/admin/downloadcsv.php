@@ -1,8 +1,10 @@
 <?php
+
 session_start();
 include('include/config.php');
+//echo "select tblcomplaints.*,users.fullName as name from tblcomplaints join users on users.id=tblcomplaints.userId where tblcomplaints.regDateshow>0";
 $query = mysqli_query($con, "select tblcomplaints.*,users.fullName as name from tblcomplaints join users on users.id=tblcomplaints.userId where tblcomplaints.regDateshow>0");
-date_default_timezone_set('Asia/Kolkata');// change according timezone
+date_default_timezone_set('Asia/Kolkata'); // change according timezone
 $list = array();
 $i = 0;
 while ($row = mysqli_fetch_array($query)) {
@@ -14,17 +16,19 @@ while ($row = mysqli_fetch_array($query)) {
     $list[$i]['status'] = $row['status'];
     $list[$i]['category'] = getCategory($row['category'], $con)['categoryName'];
     $list[$i]['categoryDetails'] = getCategory($row['category'], $con)['categoryDescription'];
-    $list[$i]['subcategory'] = $row['subcategory'];
-    $list[$i]['regDateshow'] = getcurrenttimme($row['regDateshow']); 
-    $list[$i]['File']='https://ascenttechsolution.com/cms/users/complaintdocs/'.$row['complaintFile'];
+    //$list[$i]['subcategory'] = $row['subcategory'];
+    $list[$i]['Ticket Date'] = getcurrenttimme($row['regDateshow']);
+    $list[$i]['File'] = 'https://ascenttechsolution.com/cms/users/complaintdocs/' . $row['complaintFile'];
+    $i++;
 }
+
+//echo '<pre>';
 //print_r($list);
+//die;
 
 
 
-
-function array2csv(array &$array)
-{
+function array2csv(array &$array) {
     if (count($array) == 0) {
         return null;
     }
@@ -38,18 +42,14 @@ function array2csv(array &$array)
     return ob_get_clean();
 }
 
-function getCategory($ID, $con)
-{
+function getCategory($ID, $con) {
 
     $query = mysqli_query($con, "SELECT categoryName,categoryDescription  FROM category where id=" . $ID);
     $row = mysqli_fetch_array($query);
     return $row;
 }
 
-
-
-function download_send_headers($filename)
-{
+function download_send_headers($filename) {
     // disable caching
     $now = gmdate("D, d M Y H:i:s");
     header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
@@ -65,7 +65,6 @@ function download_send_headers($filename)
     header("Content-Disposition: attachment;filename={$filename}");
     header("Content-Transfer-Encoding: binary");
 }
-
 
 download_send_headers("data_export_" . date("Y_m_d_h_i_a") . ".csv");
 echo array2csv($list);

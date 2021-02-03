@@ -12,13 +12,14 @@ var $pageArea;
         var timeout;
         return function debounced() {
             var obj = this,
-                args = arguments;
+                    args = arguments;
 
             function delayed() {
                 if (!execAsap)
                     func.apply(obj, args);
                 timeout = null;
-            };
+            }
+            ;
 
             if (timeout)
                 clearTimeout(timeout);
@@ -68,7 +69,8 @@ var Main = function () {
             mainContainer.css('min-height', mainNavigation.outerHeight());
         } else {
             mainContainer.css('min-height', $pageArea);
-        };
+        }
+        ;
         if ($windowWidth < 768) {
             mainNavigation.css('min-height', $windowHeight - $('body > .navbar').outerHeight());
         }
@@ -82,7 +84,8 @@ var Main = function () {
                         $(this).find("i").removeClass("fa-square-o").addClass("fa-check-square-o");
                     } else {
                         $(this).find("i").removeClass("icon-check-empty").addClass("fa fa-check-square-o");
-                    };
+                    }
+                    ;
                     $(this).parent().find("span").css({
                         opacity: .25
                     });
@@ -120,7 +123,8 @@ var Main = function () {
                     $('a[href="' + tabToShow + '"]').tab('show');
                 }
             });
-        };
+        }
+        ;
         if (getParameterByName('tabId').length) {
             $('a[href="#' + getParameterByName('tabId') + '"]').tab('show');
         }
@@ -160,7 +164,8 @@ var Main = function () {
                 $('body').addClass('navigation-small');
             } else {
                 $('body').removeClass('navigation-small');
-            };
+            }
+            ;
         });
     };
     //function to activate the panel tools
@@ -276,7 +281,7 @@ var Main = function () {
     var getParameterByName = function (name) {
         name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
+                results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     };
     //function to activate the iCheck Plugin
@@ -397,7 +402,8 @@ var Main = function () {
                 radioClass: 'iradio_flat-yellow',
                 increaseArea: '10%' // optional
             });
-        };
+        }
+        ;
     };
     //Search Input function
     var runSearchInput = function () {
@@ -534,7 +540,8 @@ var Main = function () {
                 $(this).closest('ul').prev('a').children('i').css('background-color', e.color).end().closest('div').prev('input').val(e.color);
                 runActivateLess();
             });
-        };
+        }
+        ;
     };
 
     //function to activate Less style
@@ -544,7 +551,8 @@ var Main = function () {
             $('#skin_color').attr("rel", "stylesheet/less").attr("href", "assets/less/styles.less");
             less.sheets.push($('link#skin_color')[0]);
             less.refresh();
-        };
+        }
+        ;
         less.modifyVars({
             '@base': $('.color-base').val(),
             '@text': $('.color-text').val(),
@@ -567,7 +575,8 @@ var Main = function () {
                 clipSetting.rtl = true;
             } else {
                 clipSetting.rtl = false;
-            };
+            }
+            ;
             if ($('body').hasClass('layout-boxed')) {
                 clipSetting.layoutBoxed = true;
                 $("body[class]").filter(function () {
@@ -581,17 +590,20 @@ var Main = function () {
                 });
             } else {
                 clipSetting.layoutBoxed = false;
-            };
+            }
+            ;
             if ($('body').hasClass('header-default')) {
                 clipSetting.headerDefault = true;
             } else {
                 clipSetting.headerDefault = false;
-            };
+            }
+            ;
             if ($('body').hasClass('footer-fixed')) {
                 clipSetting.footerDefault = false;
             } else {
                 clipSetting.footerDefault = true;
-            };
+            }
+            ;
             if ($('#skin_color').attr('rel') == 'stylesheet') {
                 clipSetting.useLess = false;
             } else if ($('#skin_color').attr('rel') == 'stylesheet/less') {
@@ -599,7 +611,8 @@ var Main = function () {
                 clipSetting.baseColor = $('.color-base').val();
                 clipSetting.textColor = $('.color-text').val();
                 clipSetting.badgeColor = $('.color-badge').val();
-            };
+            }
+            ;
             clipSetting.skinClass = $('#skin_color').attr('href');
 
             $.cookie("clip-setting", JSON.stringify(clipSetting));
@@ -629,15 +642,18 @@ var Main = function () {
 
                 $('body').addClass('layout-boxed');
                 $('#style_selector select[name="layout"]').find('option[value="boxed"]').attr('selected', 'true');
-            };
+            }
+            ;
             if (loadSetting.headerDefault) {
                 $('body').addClass('header-default');
                 $('#style_selector select[name="header"]').find('option[value="default"]').attr('selected', 'true');
-            };
+            }
+            ;
             if (!loadSetting.footerDefault) {
                 $('body').addClass('footer-fixed');
                 $('#style_selector select[name="footer"]').find('option[value="fixed"]').attr('selected', 'true');
-            };
+            }
+            ;
             if ($('#style_selector').length) {
                 if (loadSetting.useLess) {
 
@@ -650,12 +666,15 @@ var Main = function () {
                     $('.color-text').val('#555555').next('.dropdown').find('i').css('background-color', '#555555');
                     $('.color-badge').val('#007AFF').next('.dropdown').find('i').css('background-color', '#007AFF');
                     $('#skin_color').attr('href', loadSetting.skinClass);
-                };
-            };
+                }
+                ;
+            }
+            ;
             $('body').addClass(loadSetting.bgStyle);
         } else {
             runDefaultSetting();
-        };
+        }
+        ;
     };
     //function to clear user settings
     var runClearSetting = function () {
