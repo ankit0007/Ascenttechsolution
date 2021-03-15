@@ -93,6 +93,39 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                     </tr>
 
                                                     </tr>
+                                                    
+
+
+
+                                                    <?php
+                                                    $ret = mysqli_query($con, "select complaintremark.remark as remark,complaintremark.status as sstatus,complaintremark.remarkDate as rdate from complaintremark join tblcomplaints on tblcomplaints.complaintNumber=complaintremark.complaintNumber where complaintremark.complaintNumber='" . $_GET['cid'] . "'");
+                                                    while ($rw = mysqli_fetch_array($ret)) {
+                                                        ?>
+                                                        <tr>
+                                                            <td><b>Remark</b></td>
+                                                            <td colspan="5"><?php echo htmlentities($rw['remark']); ?> <b>Remark Date :</b><?php if(strlen($rw['updatetime'])>5){ echo getcurrenttimme($rw['updatetime']);   } else {
+    echo htmlentities($rw['rdate']);
+}  ?></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td><b>Status</b></td>
+                                                            <td colspan="5"><?php echo htmlentities($rw['sstatus']); ?></td>
+                                                        </tr>
+                                                    <?php } ?>
+
+                                                    <tr>
+                                                        <th><b>Final Status</b></th>
+
+                                                        <th colspan="5"><?php
+                                                            if ($row['status'] == "") {
+                                                                echo "Not Process Yet";
+                                                            } else {
+                                                                echo htmlentities($row['status']);
+                                                            }
+                                                            ?></th>
+
+                                                    </tr>
                                                     <tr>
                                                         <td><b>File(if any) </b></td>
 
@@ -105,37 +138,6 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                                 <a href="../users/complaintdocs/<?php echo htmlentities($row['complaintFile']); ?>" target="_blank"/> View File</a>
                                                             <?php } ?></td>
                                                     </tr>
-
-                                                    <tr>
-                                                        <td><b>Final Status</b></td>
-
-                                                        <td colspan="5"><?php
-                                                            if ($row['status'] == "") {
-                                                                echo "Not Process Yet";
-                                                            } else {
-                                                                echo htmlentities($row['status']);
-                                                            }
-                                                            ?></td>
-
-                                                    </tr>
-
-                                                    <?php
-                                                    $ret = mysqli_query($con, "select complaintremark.remark as remark,complaintremark.status as sstatus,complaintremark.remarkDate as rdate from complaintremark join tblcomplaints on tblcomplaints.complaintNumber=complaintremark.complaintNumber where complaintremark.complaintNumber='" . $_GET['cid'] . "'");
-                                                    while ($rw = mysqli_fetch_array($ret)) {
-                                                        ?>
-                                                        <tr>
-                                                            <td><b>Remark</b></td>
-                                                            <td colspan="5"><?php echo htmlentities($rw['remark']); ?> <b>Remark Date :</b><?php echo htmlentities($rw['rdate']); ?></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td><b>Status</b></td>
-                                                            <td colspan="5"><?php echo htmlentities($rw['sstatus']); ?></td>
-                                                        </tr>
-                                                    <?php } ?>
-
-
-
 
 
                                                     <tr>
@@ -155,7 +157,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                                 <button type="button" class="btn btn-primary">View User Detials</button></a></td>
 
                                                     </tr>
-    <?php } ?>
+                                                <?php } ?>
 
                                         </table>
                                     </div>
@@ -169,7 +171,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                 </div><!--/.container-->
             </div><!--/.wrapper-->
 
-    <?php include('include/footer.php'); ?>
+            <?php include('include/footer.php'); ?>
 
             <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
             <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
@@ -177,13 +179,13 @@ if (strlen($_SESSION['alogin']) == 0) {
             <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
             <script src="scripts/datatables/jquery.dataTables.js"></script>
             <script>
-                                                            $(document).ready(function () {
-                                                                $('.datatable-1').dataTable();
-                                                                $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-                                                                $('.dataTables_paginate > a').wrapInner('<span />');
-                                                                $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-                                                                $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-                                                            });
+                                                                $(document).ready(function () {
+                                                                    $('.datatable-1').dataTable();
+                                                                    $('.dataTables_paginate').addClass("btn-group datatable-pagination");
+                                                                    $('.dataTables_paginate > a').wrapInner('<span />');
+                                                                    $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+                                                                    $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+                                                                });
             </script>
         </body>
-<?php } ?>
+    <?php } ?>
