@@ -10,7 +10,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         $remark = $_POST['remark'];
         $times=strtotime('now');
         $query = mysqli_query($con, "insert into complaintremark(complaintNumber,status,remark,updatetime) values('$complaintnumber','$status','$remark','$times')");
-        $sql = mysqli_query($con, "update tblcomplaints set status='$status',updatetime='$times' where complaintNumber='$complaintnumber'");
+        $sql = mysqli_query($con, "update tblcomplaints set status='$status' where complaintNumber='$complaintnumber'");
 
         echo "<script>alert('Complaint details updated successfully');</script>";
     }

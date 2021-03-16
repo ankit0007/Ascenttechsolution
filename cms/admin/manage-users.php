@@ -91,7 +91,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                             
                                                         } ?></td>
 
-                                                        <td><a href="javascript:void(0);" onClick="popUpWindow('http://localhost/cms/admin/userprofile.php?uid=<?php echo htmlentities($row['id']); ?>');" title="View Details">
+                                                        <td><a href="javascript:void(0);" onClick="popUpWindow('https://ascenttechsolution.com/cms/admin/userprofile.php?uid=<?php echo htmlentities($row['id']); ?>');" title="View Details">
                                                                 <button type="button" class="btn btn-primary">View Detials</button>
                                                             </a>
                                                             <a href="manage-users.php?uid=<?php echo htmlentities($row['id']); ?>&&action=del" title="Delete" onClick="return confirm('Do you really want to delete ?')">
